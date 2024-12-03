@@ -3,79 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Life</title>
-    <style>
-      figure {
-        max-width: 800px;
-      }
-      .overlay-and-video {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        display: flex;
-      }
-
-      .overlay-and-video img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
-        opacity: .5;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        background-color: white;
-        /* mix-blend-mode: multiply; */
-      }
-      .overlay-and-video video {
-        width: 100%;
-        object-fit: cover;
-      }
-    </style>
+    <title>Projecting Life</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <figure>
+    <header>
+        <h1>projecting.life</h1>
+    
+        <nav>
+            <a class="nav-item" href="#projects">
+                <div class="nav-image"><img src="images/holds/hold-1.png"></div>
+                introduction
+            </a>
+            <a class="nav-item" href="#projects">
+                <div class="nav-image"><img src="images/holds/hold-4.png"></div>
+                projecting
+            </a>
+            <a class="nav-item" href="invitation.html">
+                <div class="nav-image"><img src="images/holds/hold-3.png"></div>
+                invitation
+            </a>
+            <a class="nav-item" href="about.html">
+                <div class="nav-image"><img src="images/holds/hold-9.png"></div>
+                about
+            </a>
+        </nav>
+    </header>
+
+    <p>Projecting Life, you may ask? Sometimes life is just too full of things – what we call a <em>Project Life</em>, while other times it's consumed by one thing – a <em>Life Project</em>. In both Life-Types you can get lost; in both you may want to be in the other.</p>
+
+    <p>To help find our route through all of this we take cues from climbing. When you fall from a rock, you can do two things: leave it or <em>project</em> it: committing to trying it, for an hour, day, month, until you're up. Whatever your Life-Type, we'll help each other Project our Lives.</p>
+
+    <!-- Jack -->
+    <figure class="large">
         <div class="overlay-and-video">
-          <img src="https://d2w9rnfcy7mm78.cloudfront.net/32706299/original_9f3da733db6a485b4ecc7b56236a2a6e.jpg?1733233273" alt="jack's drawing" class="overlay">
-          <video src="https://attachments.are.na/32706630/09832791bf9215885f801a5b6d24a383.mp4?1733234412" autoplay loop muted></video>
+            <img src="https://d2w9rnfcy7mm78.cloudfront.net/32707195/original_11c9d03670d84398d31cffeed959a0f0.jpg?1733235862?bc=0" alt="jack's drawing" class="overlay">
+            <video src="https://attachments.are.na/32706630/09832791bf9215885f801a5b6d24a383.mp4?1733234412" autoplay loop muted></video>
         </div>
         <div class="controls">
-          <input type="range" min="0" max="100" value="50" class="slider">
+            <input type="range" min="0" max="100" value="50" class="slider">
         </div>
         <figcaption>
-          Jack's life project
+            Jack's life project
         </figcaption>
     </figure>
 
-    <figure>
-      <div class="overlay-and-video">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/32706292/original_947c51c898ea42b48a5cf07cae41cb48.jpg?1733233272" alt="emma's drawing" class="overlay">
-        <video src="https://attachments.are.na/32706245/655232f99f7ac47892133ff0636d6ca2.mp4?1733233140" autoplay loop muted></video>
-      </div>
-      <div class="controls">
-        <input type="range" min="0" max="100" value="50" class="slider">
-      </div>
-      <figcaption>
-        Emma's life project
-      </figcaption>
-  </figure>
+    <figure class="large">
+        <div class="overlay-and-video">
+            <img src="https://d2w9rnfcy7mm78.cloudfront.net/32707191/original_2c6770688ea62017a62dd0086b24630f.jpg?1733235861?bc=0" alt="emma's drawing" class="overlay">
+            <video src="https://attachments.are.na/32706245/655232f99f7ac47892133ff0636d6ca2.mp4?1733233140" autoplay loop muted></video>
+        </div>
+        <div class="controls">
+            <input type="range" min="0" max="100" value="50" class="slider">
+        </div>
+        <figcaption>
+            Emma's life project
+        </figcaption>
+    </figure>
+
+    <figure class="large">
+        <div class="overlay-and-video">
+            <img src="https://d2w9rnfcy7mm78.cloudfront.net/32707192/original_7539975dfabe63f52bbdb8a5043c784f.jpg?1733235861?bc=0" alt="gijs's drawing" class="overlay">
+            <video src="https://attachments.are.na/32707509/4a874aea0e67ea69506b9e230e3fbedc.mp4?1733236526" autoplay loop muted></video>
+        </div>
+        <div class="controls">
+            <input type="range" min="0" max="100" value="50" class="slider">
+        </div>
+        <figcaption>
+            Gijs's life project
+        </figcaption>
+    </figure>
+
+    <figure class="large">
+        <div class="overlay-and-video">
+            <img src="https://d2w9rnfcy7mm78.cloudfront.net/32707197/original_392117ce128463ce32cfb6290ff868e3.jpg?1733235862?bc=0" alt="elliott's drawing" class="overlay">
+            <video src="https://attachments.are.na/32707644/6f5747570b1406164471869833ea2cf6.mp4?1733236811" autoplay loop muted></video>
+        </div>
+        <div class="controls">
+            <input type="range" min="0" max="100" value="50" class="slider">
+        </div>
+        <figcaption>
+            Elliott's life project
+        </figcaption>
+    </figure>
+
+    <figure class="large">
+        <div class="overlay-and-video">
+            <img src="https://d2w9rnfcy7mm78.cloudfront.net/32708691/original_9863fc6f13e79e11d33e5e88bd088284.jpg?1733239366?bc=0" alt="ben's drawing" class="overlay">
+            <video src="https://attachments.are.na/32708086/a61cd221ac89f8afd841814da2669ffb.mp4?1733237873" autoplay loop muted></video>
+        </div>
+        <div class="controls">
+            <input type="range" min="0" max="100" value="50" class="slider">
+        </div>
+        <figcaption>
+            Ben's life project
+        </figcaption>
+    </figure>
 
     <script>
-      document.querySelectorAll('figure').forEach(figure => {
-        const overlay = figure.querySelector('.overlay-and-video img');
-        const slider = figure.querySelector('.slider');
+        document.querySelectorAll('figure').forEach(figure => {
+            const overlay = figure.querySelector('.overlay-and-video img');
+            const slider = figure.querySelector('.slider');
 
-        slider.addEventListener('input', function(event) {
-          overlay.style.opacity = event.target.value / 100;
+            slider.addEventListener('input', function(event) {
+                overlay.style.opacity = event.target.value / 100;
+            });
+
+            // Initialize slider display based on overlay visibility
+            if (overlay.style.display === 'none') {
+                slider.style.display = 'none';
+            }
         });
-
-        // Initialize slider display based on overlay visibility
-        if (overlay.style.display === 'none') {
-          slider.style.display = 'none';
-        }
-      });
     </script>
 </body>
 </html>
