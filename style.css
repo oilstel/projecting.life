@@ -21,6 +21,10 @@ body {
     -moz-osx-font-smoothing: grayscale; 
     -webkit-text-size-adjust: none;
     color: var(--black);
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 a {
     color: var(--link-color);
