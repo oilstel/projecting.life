@@ -42,7 +42,7 @@ def update_html_files():
                     )
 
                     # Replace the include block with properly indented content
-                    include_block = f'{indentation}<!-- include: {include_file} -->\n{indented_include_content}{indentation}<!-- endinclude -->'
+                    include_block = f'{indentation}<!-- include: {include_file} -->{indented_include_content}{indentation}<!-- endinclude -->'
                     content_updated = content_updated.replace(match.group(0), include_block)
 
                     print(f'Updated: {filename} with content from includes/{include_file}')
