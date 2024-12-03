@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projecting Life</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        #sky {
+            overflow: hidden;
+            background-color: rgb(2, 2, 35);
+            animation: skyColor 60s linear infinite;
+        }
+        
+        #sky {
+            position: relative;
+            height: 100vh;
+        }
+        #sky .hold {
+            position: absolute;
+            filter: grayscale(100%);
+        }
+        #sky .hold:hover {
+            position: absolute;
+            filter: grayscale(0%);
+        }
+        #sky .hold img {
+            width: 90px;
+            height: 90px;
+        }
+        #sky .hold .hold-label {
+            text-transform: lowercase;
+            font-style: italic;
+            color: rgb(166, 166, 166);
+            font-size: 14px;
+        }
+        #sky .star {
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 1px;
+            background-color: white;
+        }
+        .hold-label {
+            position: absolute;
+            color: white;
+            font-size: 0.8em;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            text-shadow: 1px 1px 2px black;
+        }
+    </style>
 </head>
 <body>
     <!-- include: header.html -->
@@ -36,5 +84,99 @@
 
     <p>To help find our route through all of this we take cues from climbing. When you fall from a rock, you can do two things: leave it or <em>project</em> it: committing to trying it, for an hour, day, month, until you're up. Whatever your Life-Type, we'll help each other Project our Lives.</p>
 
+    <br><br><br><br><br><br>
+
+    <div id="sky">
+        <div class="hold">
+            <img src="images/holds/hold-1.png">
+            <span class="hold-label"></span>
+        </div>
+        <div class="hold">
+            <img src="images/holds/hold-2.png">
+            <span class="hold-label"></span>
+        </div>
+        <div class="hold">
+            <img src="images/holds/hold-3.png">
+            <span class="hold-label"></span>
+        </div>
+        <div class="hold">
+            <img src="images/holds/hold-4.png">
+            <span class="hold-label"></span>
+        </div>
+        <div class="hold">
+            <img src="images/holds/hold-5.png">
+            <span class="hold-label"></span>
+        </div>
+        <div class="hold">
+            <img src="images/holds/hold-6.png">
+            <span class="hold-label"></span>
+        </div>
+        <div class="hold">
+            <img src="images/holds/hold-7.png">
+            <span class="hold-label"></span>
+        </div>
+        <div class="hold">
+            <img src="images/holds/hold-9.png" style="width: 150px; height: 150px;">
+            <span class="hold-label"></span>
+        </div>
+        <div class="hold">
+            <img src="images/holds/hold-10.png" style="width: 150px; height: 150px;">
+            <span class="hold-label"></span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add stars
+            const sky = document.getElementById('sky');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                star.style.left = x + '%';
+                star.style.top = y + '%';
+                sky.appendChild(star);
+            }
+
+            // Position holds and add labels
+            const holds = document.querySelectorAll('.hold');
+            const holdSizePercent = 8;
+            const minDistancePercent = holdSizePercent + 2;
+            const positions = [];
+            const betaLabels = ['Right Foot', 'Left Foot', 'Right Hand', 'Left Hand', 'Finish', 'Start'];
+
+            holds.forEach((hold, index) => {
+                let x, y, overlapping;
+                do {
+                    overlapping = false;
+                    x = Math.random() * (100 - holdSizePercent);
+                    y = Math.random() * (100 - holdSizePercent);
+
+                    for (const pos of positions) {
+                        const distance = Math.sqrt(
+                            Math.pow(x - pos.x, 2) + 
+                            Math.pow(y - pos.y, 2)
+                        );
+                        if (distance < minDistancePercent) {
+                            overlapping = true;
+                            break;
+                        }
+                    }
+                } while (overlapping);
+
+                positions.push({ x, y });
+                hold.style.left = x + '%';
+                hold.style.top = y + '%';
+
+                // Add random beta label
+                const label = hold.querySelector('.hold-label');
+                if (label) {
+                    const randomLabel = betaLabels[Math.floor(Math.random() * betaLabels.length)];
+                    label.textContent = randomLabel;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
