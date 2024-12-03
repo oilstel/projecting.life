@@ -3,125 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-    <title>You are invited to Project your Life</title>
+    <title>Project Life</title>
     <style>
-        *, *:before, *:after{
-            box-sizing:border-box;
-        }
-        html {
-            background-color: purple;
-        }
-        body {
-            background: linear-gradient(purple, coral);
-            min-height: 100dvh;
-            padding: 0;
-            margin: 0;
-        }
+      figure {
+        max-width: 800px;
+      }
+      .overlay-and-video {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+      }
 
-        h2#horizon {
-            font-size: 3em;
-            font-weight: normal;
-            letter-spacing: 0.1em;
-        }
-        main {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-            width: 100%;
-            min-height: 100dvh;
-        }
-        #letter {
-            border: 2px solid #000;
-            color: #000;
-            background-color: whitesmoke;
-            padding: 30px;
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto;
-        }
-        main p {
-            font-size: 18px;
-            line-height: 30px;
-        }
-        main p:first-child {
-            margin-top: 0;
-        }
-        main p:last-child {
-            margin-bottom: 0;
-        }
-        .highlight {
-            background-color: gold;
-        }
-
-        footer {
-            bottom: 0;
-            font-style: italic;
-            margin-top: auto;
-            padding-top: 20px;
-        }
-        input#friend {
-            font-family: Times;
-            font-size: 18px;
-            background-color: transparent;
-            outline: 0;
-            border: 0;
-            border-bottom: 1px solid #000;
-            max-width: 120px;
-        }
+      .overlay-and-video img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        opacity: .5;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background-color: white;
+        /* mix-blend-mode: multiply; */
+      }
+      .overlay-and-video video {
+        width: 100%;
+        object-fit: cover;
+      }
     </style>
 </head>
 <body>
-    <main>
-        <h2 id="horizon">projecting.life</h2>
-        <!-- <h3 class="horizon">&#128065;</h3> -->
-
-        <div id="letter">
-            <p>Dear <input type="text" id="friend" value="">,</p>
-        
-            <p>You are invited to Project your Life with us, Gijs and Elliott, on <span class="highlight">Apr 22 14-17h at Extra Practice</span>.</p>
-    
-            <p>Projecting Life, you may ask? Sometimes life is just too full of things – what we call a <em>Project Life</em>, while other times it's consumed by one thing – a <em>Life Project</em>. In both Life-Types you can get lost; in both you may want to be in the other.</p>
-    
-            <p>To help find our route through all of this we take cues from climbing. When you fall from a rock, you can do two things: leave it or <em>project</em> it: committing to trying it, for an hour, day, month, until you're up. Whatever your Life-Type, we'll help each other Project our Lives.</p>
-    
-            <p>Apr 22 will be the first practice session at XP, to be continued at Fontainebleau. 
-            <!--  rsvp +31686211447 or just come by <br> --></p>
-            <p>
-                living,<br>
-                gijs and elliott
-            </p>
+    <figure>
+        <div class="overlay-and-video">
+          <img src="https://d2w9rnfcy7mm78.cloudfront.net/32706299/original_9f3da733db6a485b4ecc7b56236a2a6e.jpg?1733233273" alt="jack's drawing" class="overlay">
+          <video src="https://attachments.are.na/32706630/09832791bf9215885f801a5b6d24a383.mp4?1733234412" autoplay loop muted></video>
         </div>
+        <div class="controls">
+          <input type="range" min="0" max="100" value="50" class="slider">
+        </div>
+        <figcaption>
+          Jack's life project
+        </figcaption>
+    </figure>
 
-        <footer>
-            brought to you by Life 
-        </footer>
-    </main>
+    <figure>
+      <div class="overlay-and-video">
+        <img src="https://d2w9rnfcy7mm78.cloudfront.net/32706292/original_947c51c898ea42b48a5cf07cae41cb48.jpg?1733233272" alt="emma's drawing" class="overlay">
+        <video src="https://attachments.are.na/32706245/655232f99f7ac47892133ff0636d6ca2.mp4?1733233140" autoplay loop muted></video>
+      </div>
+      <div class="controls">
+        <input type="range" min="0" max="100" value="50" class="slider">
+      </div>
+      <figcaption>
+        Emma's life project
+      </figcaption>
+  </figure>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Step 1: Get the query string parameter value
-            const queryParams = new URLSearchParams(window.location.search);
-            const friendValue = queryParams.get('friend'); // 'gijs' in your example
+      document.querySelectorAll('figure').forEach(figure => {
+        const overlay = figure.querySelector('.overlay-and-video img');
+        const slider = figure.querySelector('.slider');
 
-            // Step 2: Find the input element with the id 'friend'
-            const friendInput = document.getElementById('friend');
-
-            // Step 3: Set the value of the input element
-            if (friendInput && friendValue) {
-                friendInput.value = friendValue;
-            }
+        slider.addEventListener('input', function(event) {
+          overlay.style.opacity = event.target.value / 100;
         });
+
+        // Initialize slider display based on overlay visibility
+        if (overlay.style.display === 'none') {
+          slider.style.display = 'none';
+        }
+      });
     </script>
 </body>
 </html>
-
-<!-- who's invited
-XP members
-Sarah
-Vlieland members? Maurik, Ceola, Wietske
-Michelle
-
--->
