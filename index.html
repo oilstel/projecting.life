@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projecting Life</title>
+    <link rel="icon" href="images/holds/hold-9.png">
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -79,7 +80,7 @@
                 <div class="nav-image"><img src="images/holds/hold-3.png"></div>
                 sessions
             </a>
-            <a href="about.html">
+            <a href="faq.html">
                 <div class="nav-image"><img src="images/holds/hold-9.png"></div>
                 faq
             </a>
@@ -138,6 +139,26 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Favicon cycling
+            const holdImages = [
+                'images/holds/hold-1.png',
+                'images/holds/hold-2.png',
+                'images/holds/hold-3.png',
+                'images/holds/hold-4.png',
+                'images/holds/hold-5.png',
+                'images/holds/hold-6.png',
+                'images/holds/hold-7.png',
+                'images/holds/hold-9.png',
+                'images/holds/hold-10.png'
+            ];
+            
+            let currentFaviconIndex = 0;
+            setInterval(() => {
+                const favicon = document.querySelector('link[rel="icon"]');
+                favicon.href = holdImages[currentFaviconIndex];
+                currentFaviconIndex = (currentFaviconIndex + 1) % holdImages.length;
+            }, 1000);
+
             // Add stars
             const sky = document.getElementById('sky');
             for (let i = 0; i < 100; i++) {
