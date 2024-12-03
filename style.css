@@ -4,7 +4,7 @@
     --p-lh: 34px;
     --caption-fs: 14px;
     --caption-lh: 16px;
-    --black: #000000;
+    --black: #323335;
     --blue: #0a0a89;
     --link-color: #1818cc;
 }
@@ -20,6 +20,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; 
     -webkit-text-size-adjust: none;
+    color: var(--black);
 }
 a {
     color: var(--link-color);
