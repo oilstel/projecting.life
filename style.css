@@ -96,6 +96,15 @@ figure.large {
     margin-right: auto;
 }
 
+.controls input{
+    margin: 20px auto;
+    display: block;
+}
+
+figcaption{
+    text-align: center;
+}
+
 /* Figures */
 figure {
     max-width: 800px;
