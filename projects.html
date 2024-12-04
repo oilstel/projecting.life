@@ -10,30 +10,6 @@
         html {
             background-color: #ffffff !important;
         }
-
-        footer {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .ticker {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            bottom: 0;
-            background: white;
-            padding: 10px 0;
-        }
-        .ticker img {
-            height: 40px;
-            margin: 0 10px;
-            vertical-align: middle;
-        }
     </style>
 </head>
 <body>
@@ -149,7 +125,7 @@
         <div class="overlay-and-video">
             <button id="start-climb">start climb</button>
             <img src="https://d2w9rnfcy7mm78.cloudfront.net/32738467/original_7cd095191ba8c563bb669b780301092f.jpg?1733323829?bc=0" alt="ben's drawing" class="overlay">
-            <video src="https://attachments.are.na/32738480/dd652743aaad5bdb07b9068af2e2750b.mp4?1733323868" loop muted style="width: 200%;"></video>
+            <video src="https://attachments.are.na/32743345/e1d7c49e410de34963ef3fcfd93ed9c3.mp4?1733334139" loop muted style="width: 200%;"></video>
         </div>
         <div class="controls" style="display: none;">
             <input type="range" min="0" max="100" value="50" class="slider">
@@ -169,69 +145,6 @@
         <div class="ticker"></div>
     </footer>
 
-
-    <script>
-        let currentlyPlaying = null;  // Keep track of currently playing video
-
-        document.querySelectorAll('figure').forEach(figure => {
-            const overlay = figure.querySelector('.overlay-and-video img');
-            const video = figure.querySelector('.overlay-and-video video');
-            const button = figure.querySelector('#start-climb');
-            const controls = figure.querySelector('.controls');
-            const slider = figure.querySelector('.slider');
-
-            // Add click handler for the start climb button
-            button.addEventListener('click', function() {
-                if (currentlyPlaying && currentlyPlaying !== video) {
-                    currentlyPlaying.pause();  // Pause any other playing video
-                    const prevFigure = currentlyPlaying.closest('figure');
-                    prevFigure.querySelector('.controls').style.display = 'none';
-                    prevFigure.querySelector('.overlay').style.display = 'block';
-                    prevFigure.querySelector('#start-climb').textContent = 'start climb';
-                }
-
-                if (video.paused) {
-                    video.play();
-                    controls.style.display = 'block';
-                    overlay.style.opacity = 0.5;
-                    button.textContent = 'pause climb';
-                    currentlyPlaying = video;
-                } else {
-                    video.pause();
-                    // controls.style.display = 'none';
-                    button.textContent = 'start climb';
-                    currentlyPlaying = null;
-                }
-            });
-
-            // Existing slider functionality
-            slider.addEventListener('input', function(event) {
-                overlay.style.opacity = event.target.value / 100;
-            });
-
-            if (overlay.style.display === 'none') {
-                slider.style.display = 'none';
-            }
-        });
-
-        // Ticker functionality
-        const tickerContent = document.querySelector('.ticker');
-        const holds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        
-        // Create double the content to enable seamless scrolling
-        const tickerHolds = [...holds, ...holds].map(num => 
-            `<img src="images/holds/hold-${num}.png" alt="hold ${num}">`
-        ).join('');
-        
-        tickerContent.innerHTML = tickerHolds;
-
-        // Add/remove holds for infinite scroll effect
-        setInterval(() => {
-            tickerContent.appendChild(tickerContent.firstChild);
-        }, 900);
-
-        // Append to end of ticker
-        tickerContent.appendChild(tickerContent.firstChild);
-    </script>
+    <script src="js/projects.js"></script>
 </body>
 </html>

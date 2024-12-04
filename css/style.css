@@ -144,6 +144,7 @@ figure figcaption {
 }
 .overlay-and-video button {
     position: absolute;
+    gap: 0px;
     top: 20px;
     left: 20px;
     padding: 10px 20px;
@@ -176,4 +177,28 @@ figure figcaption {
 .overlay-and-video video {
     width: 100%;
     object-fit: cover;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.ticker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    bottom: 0;
+    padding: 10px 0;
+}
+.ticker img {
+    height: 40px;
+    margin: 0 10px;
+    vertical-align: middle;
 }

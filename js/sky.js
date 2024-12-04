@@ -36,7 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const holdSizePercent = 8;
     const minDistancePercent = holdSizePercent + 2;
     const positions = [];
-    const betaLabels = ['Right Foot', 'Left Foot', 'Right Hand', 'Left Hand', 'Finish', 'Start'];
+    const betaLabels = [
+        'Start', 'Start', 'Finish',  // Core labels
+        'Right Foot', 'Left Foot', 'Right Hand', 'Left Hand'  // Movement labels
+    ];
+
+    // Create array of indices and shuffle it
+    const holdIndices = Array.from(holds).map((_, i) => i);
+    for (let i = holdIndices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [holdIndices[i], holdIndices[j]] = [holdIndices[j], holdIndices[i]];
+    }
 
     holds.forEach((hold, index) => {
         let x, y, overlapping;
@@ -61,11 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
         hold.style.left = x + '%';
         hold.style.top = y + '%';
 
-        // Add random beta label
+        // Add label
         const label = hold.querySelector('.hold-label');
         if (label) {
-            const randomLabel = betaLabels[Math.floor(Math.random() * betaLabels.length)];
-            label.textContent = randomLabel;
+            // First 3 indices in shuffled array get Start/Start/Finish
+            if (holdIndices.indexOf(index) < 3) {
+                label.textContent = betaLabels[holdIndices.indexOf(index)];
+            } else {
+                // Remaining holds get random movement labels
+                const randomIndex = Math.floor(Math.random() * 4) + 3;
+                label.textContent = betaLabels[randomIndex];
+            }
         }
     });
 });
