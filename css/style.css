@@ -141,6 +141,7 @@ figure figcaption {
     border-radius: 10px;
     border: 1px solid var(--blue);
     overflow: hidden;
+    background-color: #ffffff;
 }
 .overlay-and-video button {
     position: absolute;
