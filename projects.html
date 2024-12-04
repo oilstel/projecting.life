@@ -5,10 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projecting Life - Projects</title>
     <link rel="icon" href="images/holds/hold-10.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         html {
-            background-color: #ffffff;
+            background-color: #ffffff !important;
+        }
+
+        footer {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .ticker {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            bottom: 0;
+            background: white;
+            padding: 10px 0;
+        }
+        .ticker img {
+            height: 40px;
+            margin: 0 10px;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -26,14 +50,14 @@
                 <div class="nav-image"><img src="images/holds/hold-10.png"></div>
                 projects
             </a>
-            <a href="invitation.html">
+            <a href="sessions.html">
                 <div class="nav-image"><img src="images/holds/hold-3.png"></div>
                 sessions
             </a>
-            <a href="faq.html">
+            <!-- <a href="faq.html">
                 <div class="nav-image"><img src="images/holds/hold-9.png"></div>
                 faq
-            </a>
+            </a> -->
         </nav>
     </header>
     <!-- endinclude -->
@@ -43,26 +67,27 @@
     <!-- Jack -->
     <figure class="large">
         <div class="overlay-and-video">
+            <button id="start-climb">start climb</button>
             <img src="https://d2w9rnfcy7mm78.cloudfront.net/32707195/original_11c9d03670d84398d31cffeed959a0f0.jpg?1733235862?bc=0" alt="jack's drawing" class="overlay">
-            <video src="https://attachments.are.na/32706630/09832791bf9215885f801a5b6d24a383.mp4?1733234412" autoplay loop muted></video>
+            <video src="https://attachments.are.na/32706630/09832791bf9215885f801a5b6d24a383.mp4?1733234412" loop muted></video>
         </div>
-        <div class="controls">
+        <div class="controls" style="display: none;">
             <input type="range" min="0" max="100" value="50" class="slider">
         </div>
         <figcaption>
             <p>Jack's Project <br>
             <em>Different routes (ladder, slab, overhang) towards a Life Project life.</em>   
             </p>
-
         </figcaption>
     </figure>
 
     <figure class="large">
         <div class="overlay-and-video">
+            <button id="start-climb">start climb</button>
             <img src="https://d2w9rnfcy7mm78.cloudfront.net/32707191/original_2c6770688ea62017a62dd0086b24630f.jpg?1733235861?bc=0" alt="emma's drawing" class="overlay">
-            <video src="https://attachments.are.na/32706245/655232f99f7ac47892133ff0636d6ca2.mp4?1733233140" autoplay loop muted></video>
+            <video src="https://attachments.are.na/32706245/655232f99f7ac47892133ff0636d6ca2.mp4?1733233140" loop muted></video>
         </div>
-        <div class="controls">
+        <div class="controls" style="display: none;">
             <input type="range" min="0" max="100" value="50" class="slider">
         </div>
         <figcaption>
@@ -70,15 +95,15 @@
             <em>A series of moves to get towards Choosing One Thing.</em>   
             </p>        
         </figcaption>
-
     </figure>
 
     <figure class="large">
         <div class="overlay-and-video">
+            <button id="start-climb">start climb</button>
             <img src="https://d2w9rnfcy7mm78.cloudfront.net/32707192/original_7539975dfabe63f52bbdb8a5043c784f.jpg?1733235861?bc=0" alt="gijs's drawing" class="overlay">
-            <video src="https://attachments.are.na/32707509/4a874aea0e67ea69506b9e230e3fbedc.mp4?1733236526" autoplay loop muted></video>
+            <video src="https://attachments.are.na/32707509/4a874aea0e67ea69506b9e230e3fbedc.mp4?1733236526" loop muted></video>
         </div>
-        <div class="controls">
+        <div class="controls" style="display: none;">
             <input type="range" min="0" max="100" value="50" class="slider">
         </div>
         <figcaption>
@@ -86,15 +111,15 @@
             <em>The winding route from working Alone towards being in a Life Project Position.</em>   
             </p>        
         </figcaption>
-
     </figure>
 
     <figure class="large">
         <div class="overlay-and-video">
+            <button id="start-climb">start climb</button>
             <img src="https://d2w9rnfcy7mm78.cloudfront.net/32707197/original_392117ce128463ce32cfb6290ff868e3.jpg?1733235862?bc=0" alt="elliott's drawing" class="overlay">
-            <video src="https://attachments.are.na/32707644/6f5747570b1406164471869833ea2cf6.mp4?1733236811" autoplay loop muted></video>
+            <video src="https://attachments.are.na/32707644/6f5747570b1406164471869833ea2cf6.mp4?1733236811" loop muted></video>
         </div>
-        <div class="controls">
+        <div class="controls" style="display: none;">
             <input type="range" min="0" max="100" value="50" class="slider">
         </div>
         <figcaption>
@@ -106,10 +131,11 @@
 
     <figure class="large">
         <div class="overlay-and-video">
+            <button id="start-climb">start climb</button>
             <img src="https://d2w9rnfcy7mm78.cloudfront.net/32708691/original_9863fc6f13e79e11d33e5e88bd088284.jpg?1733239366?bc=0" alt="ben's drawing" class="overlay">
-            <video src="https://attachments.are.na/32708086/a61cd221ac89f8afd841814da2669ffb.mp4?1733237873" autoplay loop muted></video>
+            <video src="https://attachments.are.na/32708086/a61cd221ac89f8afd841814da2669ffb.mp4?1733237873" loop muted></video>
         </div>
-        <div class="controls">
+        <div class="controls" style="display: none;">
             <input type="range" min="0" max="100" value="50" class="slider">
         </div>
         <figcaption>
@@ -121,10 +147,11 @@
 
     <figure class="large">
         <div class="overlay-and-video">
-            <img src="https://d2w9rnfcy7mm78.cloudfront.net/32708691/original_9863fc6f13e79e11d33e5e88bd088284.jpg?1733239366?bc=0" alt="ben's drawing" class="overlay">
-            <video src="https://attachments.are.na/32708086/a61cd221ac89f8afd841814da2669ffb.mp4?1733237873" autoplay loop muted></video>
+            <button id="start-climb">start climb</button>
+            <img src="https://d2w9rnfcy7mm78.cloudfront.net/32738467/original_7cd095191ba8c563bb669b780301092f.jpg?1733323829?bc=0" alt="ben's drawing" class="overlay">
+            <video src="https://attachments.are.na/32738480/dd652743aaad5bdb07b9068af2e2750b.mp4?1733323868" loop muted style="width: 200%;"></video>
         </div>
-        <div class="controls">
+        <div class="controls" style="display: none;">
             <input type="range" min="0" max="100" value="50" class="slider">
         </div>
         <figcaption>
@@ -134,21 +161,77 @@
         </figcaption>
     </figure>
 
+    <br><br><br>
+
+    <footer>
+        <i>brought to you by <a href="https://supergijs.com">gijs</a> and <a href="https://elliott.computer">elliott</a></i>
+        <br>
+        <div class="ticker"></div>
+    </footer>
+
 
     <script>
+        let currentlyPlaying = null;  // Keep track of currently playing video
+
         document.querySelectorAll('figure').forEach(figure => {
             const overlay = figure.querySelector('.overlay-and-video img');
+            const video = figure.querySelector('.overlay-and-video video');
+            const button = figure.querySelector('#start-climb');
+            const controls = figure.querySelector('.controls');
             const slider = figure.querySelector('.slider');
 
+            // Add click handler for the start climb button
+            button.addEventListener('click', function() {
+                if (currentlyPlaying && currentlyPlaying !== video) {
+                    currentlyPlaying.pause();  // Pause any other playing video
+                    const prevFigure = currentlyPlaying.closest('figure');
+                    prevFigure.querySelector('.controls').style.display = 'none';
+                    prevFigure.querySelector('.overlay').style.display = 'block';
+                    prevFigure.querySelector('#start-climb').textContent = 'start climb';
+                }
+
+                if (video.paused) {
+                    video.play();
+                    controls.style.display = 'block';
+                    overlay.style.opacity = 0.5;
+                    button.textContent = 'pause climb';
+                    currentlyPlaying = video;
+                } else {
+                    video.pause();
+                    // controls.style.display = 'none';
+                    button.textContent = 'start climb';
+                    currentlyPlaying = null;
+                }
+            });
+
+            // Existing slider functionality
             slider.addEventListener('input', function(event) {
                 overlay.style.opacity = event.target.value / 100;
             });
 
-            // Initialize slider display based on overlay visibility
             if (overlay.style.display === 'none') {
                 slider.style.display = 'none';
             }
         });
+
+        // Ticker functionality
+        const tickerContent = document.querySelector('.ticker');
+        const holds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        
+        // Create double the content to enable seamless scrolling
+        const tickerHolds = [...holds, ...holds].map(num => 
+            `<img src="images/holds/hold-${num}.png" alt="hold ${num}">`
+        ).join('');
+        
+        tickerContent.innerHTML = tickerHolds;
+
+        // Add/remove holds for infinite scroll effect
+        setInterval(() => {
+            tickerContent.appendChild(tickerContent.firstChild);
+        }, 900);
+
+        // Append to end of ticker
+        tickerContent.appendChild(tickerContent.firstChild);
     </script>
 </body>
 </html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <title>You are invited to Project your Life</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        *, *:before, *:after{
+            box-sizing:border-box;
+        }
+        html {
+            /* background-color: purple; */
+        }
+        body {
+            background: linear-gradient(purple, coral);
+            min-height: 100dvh;
+            padding: 0;
+            margin: 0;
+        }
+
+        h2#horizon {
+            font-size: 3em;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            color: black;
+        }
+        main {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            width: 100%;
+            min-height: 100dvh;
+        }
+        #letter {
+            border: 2px solid #000;
+            color: #000;
+            background-color: whitesmoke;
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        main p {
+            font-size: 18px;
+            line-height: 30px;
+        }
+        main p:first-child {
+            margin-top: 0;
+        }
+        main p:last-child {
+            margin-bottom: 0;
+        }
+        .highlight {
+            background-color: gold;
+        }
+
+        footer {
+            bottom: 0;
+            font-style: italic;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+        input#friend {
+            font-family: Times;
+            font-size: 18px;
+            background-color: transparent;
+            outline: 0;
+            border: 0;
+            border-bottom: 1px solid #000;
+            max-width: 120px;
+        }
+    </style>
+</head>
+<body>
+        <!-- include: header.html -->
+        <header>
+            <h1>projecting.life</h1>
+        
+            <nav>
+                <a href="index.html">
+                    <div class="nav-image"><img src="images/holds/hold-1.png"></div>
+                    start
+                </a>
+                <a href="projects.html">
+                    <div class="nav-image"><img src="images/holds/hold-10.png"></div>
+                    projects
+                </a>
+                <a href="invitation.html" class="active">
+                    <div class="nav-image"><img src="images/holds/hold-3.png"></div>
+                    sessions
+                </a>
+                <!-- <a href="faq.html">
+                    <div class="nav-image"><img src="images/holds/hold-9.png"></div>
+                    faq
+                </a> -->
+            </nav>
+        </header>
+        <!-- endinclude -->
+    <main>
+        <h2 id="horizon">projecting.life 102</h2>
+        <!-- <h3 class="horizon">&#128065;</h3> -->
+
+        <div id="letter">
+            <p>Dear <input type="text" id="friend" value="friend">,</p>
+        
+            <p>You are invited to continue Projecting your Life with us, Gijs and Elliott, in <span class="highlight">the first week of May in Fontainebleau</span>.</p>
+    
+            <p>You've drawn your as a <em>Rock</em>. Now we'll find that <em>Rock</em>, so you'll be able to practice climbing your <em>Life Challenge</em>.</p>
+    
+            <p>Be sure to film it, as material for Projecting.life 103.</p>
+    
+            <p>
+                hanging,<br>
+                gijs and elliott
+            </p>
+        </div>
+
+        <h2 id="horizon">projecting.life 101</h2>
+        <!-- <h3 class="horizon">&#128065;</h3> -->
+
+        <div id="letter">
+            <p>Dear <input type="text" id="friend" value="friend">,</p>
+        
+            <p>You are invited to Project your Life with us, Gijs and Elliott, on <span class="highlight">Apr 22 14-17h at Extra Practice</span>.</p>
+    
+            <p>Projecting Life, you may ask? Sometimes life is just too full of things – what we call a <em>Project Life</em>, while other times it's consumed by one thing – a <em>Life Project</em>. In both Life-Types you can get lost; in both you may want to be in the other.</p>
+    
+            <p>To help find our route through all of this we take cues from climbing. When you fall from a rock, you can do two things: leave it or <em>project</em> it: committing to trying it, for an hour, day, month, until you're up. Whatever your Life-Type, we'll help each other Project our Lives.</p>
+    
+            <p>Apr 22 will be the first practice session at XP, to be continued at Fontainebleau. 
+            <!--  rsvp +31686211447 or just come by <br> --></p>
+            <p>
+                living,<br>
+                gijs and elliott
+            </p>
+        </div>
+
+        <footer>
+            brought to you by Life 
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Step 1: Get the query string parameter value
+            const queryParams = new URLSearchParams(window.location.search);
+            const friendValue = queryParams.get('friend'); // 'gijs' in your example
+
+            // Step 2: Find the input element with the id 'friend'
+            const friendInput = document.getElementById('friend');
+
+            // Step 3: Set the value of the input element
+            if (friendInput && friendValue) {
+                friendInput.value = friendValue;
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- who's invited
+XP members
+Sarah
+Vlieland members? Maurik, Ceola, Wietske
+Michelle
+
+-->

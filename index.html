@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projecting Life</title>
     <link rel="icon" href="images/holds/hold-9.png">
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
         #sky {
@@ -20,7 +21,6 @@
         }
         #sky .hold {
             position: absolute;
-            filter: grayscale(100%);
         }
         #sky .hold:hover {
             position: absolute;
@@ -60,19 +60,24 @@
             color: rgb(70, 70, 70);
             padding: 10px;
         }
-        button{
-            display: block;
-            margin: auto;
-            padding: 1em;
+        a.cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: max-content;
+            margin: 0 auto;
+            padding: 17px 20px 24px 20px;
             background: none;
-            border: 1px blue solid;
-            font-size: 1.5em;
-            font-family: inherit;
-            color: blue;
+            border: 1px var(--link-color) solid;
+            font-size: var(--p-fs);
+            line-height: var(--p-lh);
+            color: var(--link-color);
+            text-decoration: none;
+            border-radius: 4px;
         }
-        button:hover{
+        a.cta:hover{
             background: lightskyblue;
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -90,25 +95,25 @@
                 <div class="nav-image"><img src="images/holds/hold-10.png"></div>
                 projects
             </a>
-            <a href="invitation.html">
+            <a href="sessions.html">
                 <div class="nav-image"><img src="images/holds/hold-3.png"></div>
                 sessions
             </a>
-            <a href="faq.html">
+            <!-- <a href="faq.html">
                 <div class="nav-image"><img src="images/holds/hold-9.png"></div>
                 faq
-            </a>
+            </a> -->
         </nav>
     </header>
     <!-- endinclude -->
 
-    <p>Projecting Life, you may ask? Sometimes life is just too full of things – what we call a <em>Project Life</em>, while other times it's consumed by one thing – a <em>Life Project</em>. In both Life-Types you can get lost; in both you may want to be in the other.</p>
+    <p class="large wide">Projecting Life, you may ask? Sometimes life is just too full of things – what we call a <em>Project Life</em>, while other times it's consumed by one thing – a <em>Life Project</em>. In both Life-Types you can get lost; in both you may want to be in the other.</p>
 
-    <p>To help find our route through all of this we take cues from climbing. When you fall from a rock, you can do two things: leave it or <em>project</em> it: commit to trying it, for an hour, day, month, until you're up. Whatever your Life-Type, we'll help each other Project our Lives.</p>
+    <p class="large wide">To help find our route through all of this we take cues from climbing. When you fall from a rock, you can do two things: leave it or <em>project</em> it: commit to trying it, for an hour, day, month, until you're up. Whatever your Life-Type, we'll help each other Project our Lives.</p>
 
-    <a href="/projects.html"></a><button>See our Projects</button></a>
-
-    <br><br><br><br><br><br>
+    <p class="large wide"><i>Visit our <a href="projects.html">projects</a></i>.</p>
+    
+    <br><br><br>
 
     <div id="sky">
         <div class="hold">
@@ -153,78 +158,6 @@
         brought to you by <a href="https://supergijs.com">gijs</a> and <a href="https://elliott.computer">elliott</a>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Favicon cycling
-            const holdImages = [
-                'images/holds/hold-1.png',
-                'images/holds/hold-2.png',
-                'images/holds/hold-3.png',
-                'images/holds/hold-4.png',
-                'images/holds/hold-5.png',
-                'images/holds/hold-6.png',
-                'images/holds/hold-7.png',
-                'images/holds/hold-9.png',
-                'images/holds/hold-10.png'
-            ];
-            
-            let currentFaviconIndex = 0;
-            setInterval(() => {
-                const favicon = document.querySelector('link[rel="icon"]');
-                favicon.href = holdImages[currentFaviconIndex];
-                currentFaviconIndex = (currentFaviconIndex + 1) % holdImages.length;
-            }, 1000);
-
-            // Add stars
-            const sky = document.getElementById('sky');
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                const x = Math.random() * 100;
-                const y = Math.random() * 100;
-                star.style.left = x + '%';
-                star.style.top = y + '%';
-                sky.appendChild(star);
-            }
-
-            // Position holds and add labels
-            const holds = document.querySelectorAll('.hold');
-            const holdSizePercent = 8;
-            const minDistancePercent = holdSizePercent + 2;
-            const positions = [];
-            const betaLabels = ['Right Foot', 'Left Foot', 'Right Hand', 'Left Hand', 'Finish', 'Start'];
-
-            holds.forEach((hold, index) => {
-                let x, y, overlapping;
-                do {
-                    overlapping = false;
-                    x = Math.random() * (100 - holdSizePercent);
-                    y = Math.random() * (100 - holdSizePercent);
-
-                    for (const pos of positions) {
-                        const distance = Math.sqrt(
-                            Math.pow(x - pos.x, 2) + 
-                            Math.pow(y - pos.y, 2)
-                        );
-                        if (distance < minDistancePercent) {
-                            overlapping = true;
-                            break;
-                        }
-                    }
-                } while (overlapping);
-
-                positions.push({ x, y });
-                hold.style.left = x + '%';
-                hold.style.top = y + '%';
-
-                // Add random beta label
-                const label = hold.querySelector('.hold-label');
-                if (label) {
-                    const randomLabel = betaLabels[Math.floor(Math.random() * betaLabels.length)];
-                    label.textContent = randomLabel;
-                }
-            });
-        });
-    </script>
+    <script src="js/sky.js"></script>
 </body>
 </html>
