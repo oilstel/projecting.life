@@ -3,6 +3,7 @@ let currentlyPlaying = null;  // Keep track of currently playing video
 document.querySelectorAll('figure').forEach(figure => {
     const overlay = figure.querySelector('.overlay-and-video img');
     const video = figure.querySelector('.overlay-and-video video');
+    const audio = figure.querySelector('.overlay-and-video audio');
     const button = figure.querySelector('#start-climb');
     const controls = figure.querySelector('.controls');
     const slider = figure.querySelector('.slider');
@@ -15,17 +16,19 @@ document.querySelectorAll('figure').forEach(figure => {
             prevFigure.querySelector('.controls').style.display = 'none';
             prevFigure.querySelector('.overlay').style.display = 'block';
             prevFigure.querySelector('#start-climb').textContent = 'start climb';
+            prevFigure.querySelector('audio').pause();  // Pause the audio of the previous video
         }
 
         if (video.paused) {
             video.play();
+            audio.play();  // Play the audio
             controls.style.display = 'block';
             overlay.style.opacity = 0.5;
             button.textContent = 'pause climb';
             currentlyPlaying = video;
         } else {
             video.pause();
-            // controls.style.display = 'none';
+            audio.pause();  // Pause the audio
             button.textContent = 'start climb';
             currentlyPlaying = null;
         }
