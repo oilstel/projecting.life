@@ -100,7 +100,7 @@ p, blockquote, ul, ol {
     line-height: var(--h1-lh) !important;
 }
 .wide {
-    max-width: 1000px !important;
+    max-width: 800px !important;
 }
 p, blockquote, figcaption, figure, h1, h2, h3, h4, h5, h6, .life-toggle, #footnotes, hr {
     max-width: 800px;
