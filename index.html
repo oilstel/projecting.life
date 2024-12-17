@@ -11,7 +11,7 @@
     <style>
         #sky {
             overflow: hidden;
-            background-color: rgb(2, 2, 35);
+            background-color: rgb(0, 0, 0);
             border-radius: 10px;
             position: relative;
             height: 100vh;
@@ -76,6 +76,44 @@
         a.cta:hover{
             background: lightskyblue;
         }
+
+        /* Life toggles */
+        .life-toggle span {
+            font-size: var(--p-fs);
+        }
+        #choose-life-type {
+            font-size: var(--h1-fs);
+            text-align: center;
+        }
+        #choose-life-type * {
+            font-size: var(--h1-fs);
+        }
+        #life-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-top: 1px solid rgb(189, 189, 189);
+            max-width: max-content;
+            padding: 20px 30px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        /* #life-toggle .toggle-option:hover {
+            color: var(--link-color);
+        } */
+        #life-toggle label {
+            display: flex;
+            flex-direction: row nowrap;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        #life-toggle input {
+            cursor: pointer;
+        }
+        #life-toggle .toggle-option.active span {
+            color: var(--link-color);
+        }
     </style>
 </head>
 <body>
@@ -106,13 +144,48 @@
 
     <p class="large wide">Projecting Life, you may ask? Sometimes life is just too full of things – what we call a <em>Project Life</em>, while other times it's consumed by one thing – a <em>Life Project</em>. In both Life-Types you can get lost; in both you may want to be in the other.</p>
 
-    <p class="large wide">To help find our route through all of this we take cues from climbing. When you fall from a rock, you can do two things: leave it or <em>project</em> it: commit to trying it, for an hour, day, month, until you're up. Whatever your Life-Type, we'll help each other Project our Lives.</p>
+    <p class="large wide">To help find our route through all of this we take cues from climbing. When you fall from a rock, you can do two things: leave it or <em>project</em> it: commit to trying it, for an hour, day, month, until you're up. Whatever your Life-Type, we'll help each other <a href="projects.html">Project our Lives</a>.</p>
 
-    <p class="large wide"><i>Visit our <a href="projects.html">projects</a></i>.</p>
+    <br><br>
 
-    <br>
+    <!-- <div id="choose-life-type">
+        <p style="border-bottom: 1px solid rgb(0, 0, 0); padding-bottom: 10px;"><i>so what life-type do you need right now?</i></p>
+    
+        <div id="life-toggle">
+            <label class="toggle-option">
+                <input type="radio" name="life-type" value="life-project">
+                <span>Life Project</span>
+            </label>
+            <label class="toggle-option">
+                <input type="radio" name="life-type" value="project-life">
+                <span>Project Life</span>
+            </label>
+        </div>
+    </div>
 
-    <p class="ticker"></p>
+    <div id="life-project-tab" style="display: none;">
+        <h3>What is Life Project?</h3>
+        <p>
+            It's a <a href="lifetype.html">LifeType</a> for people caught up in <em>Project Life</em> and looking for a <a href="horizon.html">horizon</a>.
+        </p>
+
+        <h3>Steps...</h3>
+    </div>
+
+    <div id="project-life-tab" style="display: none;">
+        <h3>What is Project Life?</h3>
+    
+        <p>Life is purposeful and those activities that were not projects have evolved to activities that are. By the end of Web 2.0 every moment was filled with micromanaged tasks and guilty breaks. Over family dinners and in rusty garages, projects glued intentions and populated schedules. </p>
+    
+        <p>The tiny pockets of projects spread to every reach, all tasks reproducing too rapidly for all offspring to be finished in any finite universe. </p>
+        
+        <p>Undercover and unwitnessed, Project Life back then was the prodigious progeny of projecting. It still is.</p>
+
+        <h3>Steps...</h3>
+    </div> -->
+
+
+    <!-- <p class="ticker"></p>
     
     <br><br><br>
 
@@ -153,7 +226,9 @@
             <img src="images/holds/hold-10.png" style="width: 150px; height: 150px;">
             <span class="hold-label"></span>
         </div>
-    </div>
+    </div> -->
+
+    <br><br><br><br><br><br>
 
     <footer>
         <i>brought to you by <a href="https://supergijs.com">gijs</a> and <a href="https://elliott.computer">elliott</a>. made at <a href="https://extrapractice.space">extra practice</a>.</i>
@@ -161,5 +236,31 @@
 
     <script src="js/sky.js"></script>
     <script src="js/ticker.js"></script>
+    <script>
+        const radioButtons = document.querySelectorAll('input[name="life-type"]');
+        const lifeProjectTab = document.getElementById('life-project-tab');
+        const projectLifeTab = document.getElementById('project-life-tab');
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                // Remove active class from all labels
+                document.querySelectorAll('.toggle-option').forEach(label => {
+                    label.classList.remove('active');
+                });
+                
+                // Add active class to selected label
+                e.target.parentElement.classList.add('active');
+                
+                // Show/hide appropriate tab
+                if (e.target.value === 'life-project') {
+                    lifeProjectTab.style.display = 'block';
+                    projectLifeTab.style.display = 'none';
+                } else {
+                    lifeProjectTab.style.display = 'none';
+                    projectLifeTab.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -102,7 +102,7 @@ p, blockquote, ul, ol {
 .wide {
     max-width: 1000px !important;
 }
-p, blockquote, figcaption, figure, h1, h2, h3, h4, h5, h6, .life-toggle{
+p, blockquote, figcaption, figure, h1, h2, h3, h4, h5, h6, .life-toggle, #footnotes, hr {
     max-width: 800px;
     width: 100%;
     margin-left: auto;
@@ -119,6 +119,11 @@ h3 {
     padding: 0;
     margin: 20px auto;
     margin-top: 60px;
+}
+hr {
+    border: 0;
+    border-bottom: 1px solid #0a0a8943;
+    margin: 20px auto;
 }
 
 figure.large {
