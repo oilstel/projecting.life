@@ -5,10 +5,19 @@
 :root {
     --h1-fs: 34px;
     --h1-lh: 50px;
+    --mobile-h1-fs: 24px;
+    --mobile-h1-lh: 34px;
+
     --p-fs: 24px;
     --p-lh: 34px;
+    --mobile-p-fs: 18px;
+    --mobile-p-lh: 28px;
+
     --caption-fs: 14px;
     --caption-lh: 16px;
+    --mobile-caption-fs: 12px;
+    --mobile-caption-lh: 14px;
+
     --black: #323335;
     --blue: #0a0a89;
     --link-color: #1818cc;
@@ -31,6 +40,7 @@ body {
     font-weight: 450;
     font-style: normal;
     padding: 0 15px;
+    overflow-x: hidden;
 }
 a {
     color: var(--link-color);
@@ -220,4 +230,33 @@ footer {
     height: 40px;
     margin: 0 10px;
     vertical-align: middle;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    nav a {
+        font-size: var(--mobile-p-fs);
+    }
+    nav a img {
+        width: 60px;
+        height: 60px;
+    }
+    .large {
+        font-size: var(--mobile-h1-fs) !important;
+        line-height: var(--mobile-h1-lh) !important;
+    }
+    p, blockquote, ul, ol, .overlay-and-video button {
+        font-size: var(--mobile-p-fs) !important;
+        line-height: var(--mobile-p-lh) !important;
+    }
+    .overlay-and-video button {
+        top: 10px;
+        left: 10px;
+        padding: 3px 8px !important;
+    }
+    iframe {
+        pointer-events: none;
+        height: 1200px !important;
+    }
 }

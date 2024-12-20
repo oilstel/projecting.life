@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let x, y, overlapping;
         do {
             overlapping = false;
-            x = Math.random() * (100 - holdSizePercent);
-            y = Math.random() * (100 - holdSizePercent);
+            // Constrain x and y to keep holds fully inside the container
+            x = holdSizePercent/2 + Math.random() * (100 - holdSizePercent);
+            y = holdSizePercent/2 + Math.random() * (100 - holdSizePercent);
 
             for (const pos of positions) {
                 const distance = Math.sqrt(
@@ -68,8 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } while (overlapping);
 
         positions.push({ x, y });
-        hold.style.left = x + '%';
-        hold.style.top = y + '%';
+        // Center the hold by offsetting by half its size
+        hold.style.left = `calc(${x}% - ${holdSizePercent/2}%)`;
+        hold.style.top = `calc(${y}% - ${holdSizePercent/2}%)`;
 
         // Add label
         const label = hold.querySelector('.hold-label');
@@ -83,5 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 label.textContent = betaLabels[randomIndex];
             }
         }
+        hold.style.display = 'block';
     });
 });

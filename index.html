@@ -14,10 +14,12 @@
             background-color: rgb(0, 0, 0);
             border-radius: 10px;
             position: relative;
-            height: 100vh;
+            width: 100%;
+            aspect-ratio: 1/1;
         }
         #sky .hold {
             position: absolute;
+            display: none;
         }
         #sky .hold:hover {
             position: absolute;
@@ -114,6 +116,13 @@
         #life-toggle .toggle-option.active span {
             color: var(--link-color);
         }
+
+        @media (max-width: 768px) {
+            #sky .hold img {
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -189,6 +198,8 @@
     
     <br><br><br>
 
+    -->
+
     <div id="sky">
         <div class="hold">
             <img src="images/holds/hold-1.png">
@@ -226,12 +237,14 @@
             <img src="images/holds/hold-10.png" style="width: 150px; height: 150px;">
             <span class="hold-label"></span>
         </div>
-    </div> -->
+    </div> 
 
     <br><br><br><br><br><br>
 
     <footer>
         <i>brought to you by <a href="https://supergijs.com">gijs</a> and <a href="https://elliott.computer">elliott</a>. made at <a href="https://extrapractice.space">extra practice</a>.</i>
+        <br>
+        <div class="ticker"></div>
     </footer>
 
     <script src="js/sky.js"></script>
